@@ -52,8 +52,8 @@ $('.baSlider').baSlider({
 		offsetX: 0,
 		offsetY: 0
 	},
-	height:  true,
-	iconIssues: false
+	height:  auto,
+	imgHeight: auto
 });
 ```
 
