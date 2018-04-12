@@ -1,4 +1,4 @@
-# beSlider jQuery Plugin
+# baSlider jQuery Plugin
 
 ## Demo & Examples
 
