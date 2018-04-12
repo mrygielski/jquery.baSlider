@@ -74,7 +74,7 @@ bower install jquery.baSlider
 Or you can install it through [npm](https://www.npmjs.com/):
 
 ```
-npm install --save jquery.baSlider
+npm install --save jquery.baslider
 ```
 
 ## License
