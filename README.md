@@ -6,8 +6,6 @@
 
 ## Usage
 
-Create an attribute called `data-repo`:
-
 ```html
 <div class='baSlider'>
 	<div class='frame'>
