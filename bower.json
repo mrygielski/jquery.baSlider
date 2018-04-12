@@ -1,9 +1,17 @@
 {
 	"name": "jquery.baSlider",
-	"description": "baSlider is a simple plugin that allows you to show two pictures: before and after.",
+	"description": "baSlider is a simple plugin that allows you to show two pictures: before and after",
+	"license": "MIT",
 	"main": [
 		"src/jquery.baSlider.js",
 		"src/jquery.baSlider.css"
+	],
+	"keywords": [
+		"slider",
+		"before",
+		"after",
+		"jQuery",
+		"jquery-plugin"
 	],
 	"devDependencies": {
 		"jquery-1.5.2": "jquery#1.5.2",
@@ -19,5 +27,9 @@
 		"jquery-2.2.4": "jquery#2.2.4",
 		"jquery-3.0.0": "jquery#3.0.0",
 		"jquery-3.1.1": "jquery#3.1.1"
-	}
+	},
+	"ignore": [
+		"*",
+		"!/bower.json"
+	]
 }
