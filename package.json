@@ -1,8 +1,8 @@
 {
-  "name": "jquery.baSlider",
+  "name": "jquery.baslider",
   "version": "2.3.1",
   "title": "baSlider jQuery Plugin",
-  "description": "baSlider is a simple plugin that allows you to show two pictures: before and after,
+  "description": "baSlider is a simple plugin that allows you to show two pictures: before and after",
   "author": {
     "name": "Micha³ Rygielski",
     "url": "https://github.com/mrygielski/"
