@@ -52,7 +52,8 @@ $('.baSlider').baSlider({
 		offsetX: 0,
 		offsetY: 0
 	},
-	height:  auto,
+	speed: 300,
+	height: auto,
 	imgHeight: auto
 });
 ```
@@ -60,8 +61,9 @@ $('.baSlider').baSlider({
 Attribute			| Type				| Default		| Description
 ---						| ---					| ---				| ---
 `handler`		| *Array*		| `auto`		| Displays the number of stars in a repository.
-`height`		| *Mixed*		| `auto`		| Available options: auto, value (px).
-`imgHeight`	| *Mixed*		| `auto`		| Available options: auto, frame, value (px).
+`speed`		| *Number*		| `auto`		| Speed of animation: value (px).
+`height`		| *String*		| `auto`		| Available options: auto, value (px).
+`imgHeight`	| *String*		| `auto`		| Available options: auto, frame, value (px).
 
 ## Installation
 
