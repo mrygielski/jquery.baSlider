@@ -81,7 +81,7 @@ npm install --save jquery.baslider
 
 ## License
 
-This plugin is available under [the MIT license](http://mths.be/mit).
+This plugin is available under [the MIT license](https://opensource.org/licenses/mit-license.php).
 
 ## Credits
 
