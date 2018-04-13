@@ -18,8 +18,10 @@
   },
   "main": "src/jquery.baSlider.js",
   "files": [
-    "src/jquery.baSlider.js",
-    "src/jquery.baSlider.css"
+    "dist/jquery.baSlider.js",
+    "dist/jquery.baSlider.min.js",
+    "dist/jquery.baSlider.css",
+    "dist/jquery.baSlider.min.css"
   ],
   "keywords": [
     "slider",
