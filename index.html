@@ -1,15 +1,15 @@
 <html>
 <head>
-	<title>baSlider</title>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="dist/jquery.baSlider.css">
-	<script src="js/jquery.min.js"></script>
-	<script src="dist/jquery.baSlider.js"></script>
+    <title>baSlider</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="src/jquery.baSlider.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="src/jquery.baSlider.js"></script>
 </head>
 <body>
 
-	<section class="page-header">
+    <section class="page-header">
       <h1 class="name">jquery.baSlider</h1>
       <h2 class="desc">baSlider is a simple plugin that allows you to show two pictures: before and after.</h2>
       
@@ -18,76 +18,76 @@
         <a href="https://github.com/mrygielski/jquery.baSlider/tarball/master" class="btn">Download .tar.gz</a>
       
     </section>
-	
-	<section class="page-usage">
-		<div class="container">
-			<h1><a id="baSlider_jQuery_Plugin_0"></a>baSlider jQuery Plugin</h1>
-			<h2><a id="Demo__Examples_2"></a>Demo &amp; Examples</h2>
-			<p><a href="https://mrygielski.github.io/jquery.baSlider/">https://mrygielski.github.io/jquery.baSlider/</a></p>
-			
-			<p>Horizontal:</p>
-			<div class='baSlider horizontal'>
-				<div class='frame'>
-					<div baSlider-handler><img src="images/drag-horizontal.svg" alt=""></div>
-					<div class='before'>
-						<img src='images/torun_brama_zamkowa_1910_before.jpg' baSlider-image>
-					</div>  
-					<div class='after'>
-						<div>
-							<img src='images/torun_brama_zamkowa_1910_after.jpg' baSlider-image>
-						</div>
-					</div>  
-				</div>
-			</div>
-			<br><br>
-			<p>Vertical:</p>
-			<div class='baSlider vertical'>
-				<div class='frame'>
-					<div baSlider-handler><img src="images/drag-vertical.svg" alt=""></div>
-					<div class='before'>
-						<img src='images/torun_brama_zamkowa_1910_before.jpg' baSlider-image>
-					</div>  
-					<div class='after'>
-						<div>
-							<img src='images/torun_brama_zamkowa_1910_after.jpg' baSlider-image>
-						</div>
-					</div>  
-				</div>
-			</div>
+    
+    <section class="page-usage">
+        <div class="container">
+            <h1><a id="baSlider_jQuery_Plugin_0"></a>baSlider jQuery Plugin</h1>
+            <h2><a id="Demo__Examples_2"></a>Demo &amp; Examples</h2>
+            <p><a href="https://mrygielski.github.io/jquery.baSlider/">https://mrygielski.github.io/jquery.baSlider/</a></p>
+            
+            <p>Horizontal:</p>
+            <div class='baSlider horizontal'>
+                <div class='frame'>
+                    <div baSlider-handler><img src="images/drag-horizontal.svg" alt=""></div>
+                    <div class='before'>
+                        <img src='images/torun_brama_zamkowa_1910_before.jpg' baSlider-image>
+                    </div>  
+                    <div class='after'>
+                        <div>
+                            <img src='images/torun_brama_zamkowa_1910_after.jpg' baSlider-image>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <br><br>
+            <p>Vertical:</p>
+            <div class='baSlider vertical'>
+                <div class='frame'>
+                    <div baSlider-handler><img src="images/drag-vertical.svg" alt=""></div>
+                    <div class='before'>
+                        <img src='images/torun_brama_zamkowa_1910_before.jpg' baSlider-image>
+                    </div>  
+                    <div class='after'>
+                        <div>
+                            <img src='images/torun_brama_zamkowa_1910_after.jpg' baSlider-image>
+                        </div>
+                    </div>  
+                </div>
+            </div>
 
-			<script>
-				$('.horizontal').baSlider({
-					align: "horizontal",
-					start: {
-						horizontal: "50%"
-					},
-					handler: {
-						position: "auto",
-						offsetX: 0,
-						offsetY: 0
-					},
-					animation: 300,
-					height: "auto",
-					imgHeight: "auto"
-				});
-				$('.vertical').baSlider({
-					align: "vertical",
-					start: {
-						vertical: "50%"
-					},
-					handler: {
-						position: "auto",
-						offsetX: 0,
-						offsetY: 0
-					},
-					animation: 300,
-					height: "auto",
-					imgHeight: "auto"
-				});
-			</script>
-			
-			<h2><a id="Usage_6"></a>Usage</h2>
-			<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'baSlider'</span>&gt;</span>
+            <script>
+                $('.horizontal').baSlider({
+                    align: "horizontal",
+                    start: {
+                        horizontal: "50%"
+                    },
+                    handler: {
+                        position: "auto",
+                        offsetX: 0,
+                        offsetY: 0
+                    },
+                    animation: 300,
+                    height: "auto",
+                    imgHeight: "auto"
+                });
+                $('.vertical').baSlider({
+                    align: "vertical",
+                    start: {
+                        vertical: "50%"
+                    },
+                    handler: {
+                        position: "auto",
+                        offsetX: 0,
+                        offsetY: 0
+                    },
+                    animation: 300,
+                    height: "auto",
+                    imgHeight: "auto"
+                });
+            </script>
+            
+            <h2><a id="Usage_6"></a>Usage</h2>
+            <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'baSlider'</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'frame'</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">baSlider-handler</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"images/drag.svg"</span> <span class="hljs-attribute">alt</span>=<span class="hljs-value">""</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'before'</span>&gt;</span>
@@ -101,21 +101,29 @@
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
-			<p>Include jQuery:</p>
-			<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
-			<p>Include plugin`s CSS and JS:</p>
-			<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"src/jquery.baSlider.csss"</span>&gt;</span>
+            <p>Include jQuery:</p>
+            <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
+            <p>Include plugin`s CSS and JS:</p>
+            <pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"src/jquery.baSlider.csss"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"src/jquery.baSlider.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 </code></pre>
-			<p>Call the plugin:</p>
-			<pre><code class="language-javascript">$(<span class="hljs-string">'.baSlider'</span>).baSlider();</code></pre>
-			<h2><a id="Options_45"></a>Options</h2>
-			<p>Here`s a list of available settings.</p>
-			<pre><code class="language-javascript">$(<span class="hljs-string">'.baSlider'</span>).baSlider({
+            <p>Call the plugin:</p>
+            <pre><code class="language-javascript">$(<span class="hljs-string">'.baSlider'</span>).baSlider();</code></pre>
+            <h2><a id="Options_45"></a>Options</h2>
+            <p>Here`s a list of available settings.</p>
+            <pre><code class="language-javascript">$(<span class="hljs-string">'.baSlider'</span>).baSlider({
     align: <span class="hljs-string">"horizontal"</span>,
     start: {
         horizontal: <span class="hljs-string">"50%"</span>,
         vertical: <span class="hljs-string">"50%"</span>
+    },
+    anim: {
+        play: <span class="hljs-string">true</span>,
+        startDelay: <span class="hljs-number">4000</span>,
+        delay: <span class="hljs-number">2000</span>,
+        speed: <span class="hljs-number">300</span>,
+        distance: <span class="hljs-number">55</span>,
+        times: <span class="hljs-number">2</span>
     },
     handler: {
         position: <span class="hljs-string">"auto"</span>,
@@ -127,67 +135,66 @@
     iconIssues: <span class="hljs-literal">false</span>
 });
 </code></pre>
-			<table class="table table-striped table-bordered">
-			<thead>
-			<tr>
-			<th>Attribute</th>
-			<th>Type</th>
-			<th>Default</th>
-			<th>Description</th>
-			</tr>
-			</thead>
-			<tbody>
-			<tr>
-			<td><code>align</code></td>
-			<td><em>String</em></td>
-			<td><code>horizontal</code></td>
-			<td>Align of scroll.</td>
-			</tr>
-			<tr>
-			<td><code>start</code></td>
-			<td><em>Array</em></td>
-			<td><code>50%</code></td>
-			<td>Place of dividing the photo horizontally & vertically.</td>
-			</tr>
-			<tr>
-			<td><code>handler</code></td>
-			<td><em>Array</em></td>
-			<td><code>auto</code></td>
-			<td>Displays the number of stars in a repository.</td>
-			</tr>
-			<tr>
-			<td><code>speed</code></td>
-			<td><em>Number</em></td>
-			<td><code>auto</code></td>
-			<td>Speed of animation: value (px).</td>
-			</tr>
-			<tr>
-			<td><code>height</code></td>
-			<td><em>String</em></td>
-			<td><code>auto</code></td>
-			<td>Available options: auto, value (px).</td>
-			</tr>
-			<tr>
-			<td><code>imgHeight</code></td>
-			<td><em>String</em></td>
-			<td><code>auto</code></td>
-			<td>Available options: auto, frame, value (px).</td>
-			</tr>
-			</tbody>
-			</table>
-			<h2><a id="Installation_67"></a>Installation</h2>
-			<p>You can install jquery.baSlider by using <a href="http://bower.io/">Bower</a>.</p>
-			<pre><code class="language-bash">bower install jquery.baSlider</code></pre>
-			<p>Or you can install it through <a href="https://www.npmjs.com/">npm</a>:</p>
-			<pre><code>npm install --save jquery.baslider</code></pre>
-			<h2><a id="License_81"></a>License</h2>
-			<p>This plugin is available under <a href="https://opensource.org/licenses/mit-license.php">the MIT license</a>.</p>
-			<h2><a id="Credits_85"></a>Credits</h2>
-			<ul>
-			<li>Icons made by (<a href="https://www.flaticon.com/authors/smashicons">https://www.flaticon.com/authors/smashicons</a>) is licensed by (<a href="http://creativecommons.org/licenses/by/3.0/">http://creativecommons.org/licenses/by/3.0/</a>)</li>
-			<li>The pictures come from the site (<a href="http://www.afterbefore.pl">http://www.afterbefore.pl</a>)</li>
-			</ul>
-		</div>
-	</section>
+            <table class="table table-striped table-bordered">
+            <thead>
+            <tr>
+            <th>Attribute</th>
+            <th>Type</th>
+            <th>Default</th>
+            <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td><code>align</code></td>
+            <td><em>String</em></td>
+            <td><code>horizontal</code></td>
+            <td>Align of scroll.</td>
+            </tr>
+            <tr>
+            <td><code>start</code></td>
+            <td><em>Array</em></td>
+            <td><code>50%</code></td>
+            <td>Place of dividing the photo horizontally & vertically.</td>
+            </tr>
+            <tr>
+            <td><code>handler</code></td>
+            <td><em>Array</em></td>
+            <td><code>auto</code></td>
+            <td>Displays the number of stars in a repository.</td>
+            </tr>
+            <tr>
+            <td><code>speed</code></td>
+            <td><em>Number</em></td>
+            <td><code>auto</code></td>
+            <td>Speed of animation: value (px).</td>
+            </tr>
+            <tr>
+            <td><code>height</code></td>
+            <td><em>String</em></td>
+            <td><code>auto</code></td>
+            <td>Available options: auto, value (px).</td>
+            </tr>
+            <tr>
+            <td><code>imgHeight</code></td>
+            <td><em>String</em></td>
+            <td><code>auto</code></td>
+            <td>Available options: auto, frame, value (px).</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2><a id="Installation_67"></a>Installation</h2>
+            <p>You can install jquery.baSlider by using <a href="http://bower.io/">Bower</a>.</p>
+            <pre><code class="language-bash">bower install jquery.baSlider</code></pre>
+            <p>Or you can install it through <a href="https://www.npmjs.com/">npm</a>:</p>
+            <pre><code>npm install --save jquery.baslider</code></pre>
+            <h2><a id="License_81"></a>License</h2>
+            <p>This plugin is available under <a href="https://opensource.org/licenses/mit-license.php">the MIT license</a>.</p>
+            <h2><a id="Credits_85"></a>Credits</h2>
+            <ul>
+            <li>The pictures come from the site (<a href="http://www.afterbefore.pl">http://www.afterbefore.pl</a>)</li>
+            </ul>
+        </div>
+    </section>
 </body>
 </html>

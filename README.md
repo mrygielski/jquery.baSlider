@@ -8,17 +8,17 @@
 
 ```html
 <div class='baSlider'>
-	<div class='frame'>
-		<div baSlider-handler><img src="images/drag.svg" alt=""></div>
-		<div class='before'>
-			<img src='images/before.jpg' baSlider-image>
-		</div>  
-		<div class='after'>
-			<div>
-				<img src='images/after.jpg' baSlider-image>
-			</div>
-		</div>  
-	</div>
+    <div class='frame'>
+        <div baSlider-handler><img src="images/drag.svg" alt=""></div>
+        <div class='before'>
+            <img src='images/before.jpg' baSlider-image>
+        </div>  
+        <div class='after'>
+            <div>
+                <img src='images/after.jpg' baSlider-image>
+            </div>
+        </div>  
+    </div>
 </div>
 ```
 
@@ -47,30 +47,39 @@ Here's a list of available settings.
 
 ```javascript
 $('.baSlider').baSlider({
-	align: "horizontal",
+    align: "horizontal",
     start: {
         horizontal: "50%",
         vertical: "50%"
     },
-	handler: {
-		position: "auto",
-		offsetX: 0,
-		offsetY: 0
-	},
+    anim: {
+        play: true,
+        startDelay: 4000,
+        delay: 2000,
+        speed: 300,
+        distance: 55,
+        times: 2
+    },
+    handler: {
+        position: "auto",
+        offsetX: 0,
+        offsetY: 0
+    },
     speed: 300,
-	height: auto,
-	imgHeight: auto
+    height: auto,
+    imgHeight: auto
 });
 ```
 
-Attribute			| Type				| Default		| Description
----						| ---					| ---				| ---
-`align`		| *String*		| `horizontal`		| Align of scroll.
-`start`		| *Array*		| `50%`		| Place of dividing the photo horizontally & vertically.
-`handler`		| *Array*		| `auto`		| Displays the number of stars in a repository.
-`speed`		| *Number*		| `auto`		| Speed of animation: value (px).
-`height`		| *String*		| `auto`		| Available options: auto, value (px).
-`imgHeight`	| *String*		| `auto`		| Available options: auto, frame, value (px).
+Attribute            | Type                | Default        | Description
+---                        | ---                    | ---                | ---
+`align`| *String* | `horizontal` | Align of scroll.
+`start`| *Array* | - | Place of dividing the photo horizontally & vertically.
+`anim`| *Array* | - | Animation configuration.
+`handler`| *Array* | -` | Displays the number of stars in a repository.
+`speed`| *Number* | `auto` | Speed of animation: value (px).
+`height`| *String* | `auto` | Available options: auto, value (px).
+`imgHeight`| *String* | `auto` | Available options: auto, frame, value (px).
 
 ## Installation
 
@@ -92,5 +101,4 @@ This plugin is available under [the MIT license](https://opensource.org/licenses
 
 ## Credits
 
-* Icons made by (https://www.flaticon.com/authors/smashicons) is licensed by (http://creativecommons.org/licenses/by/3.0/)
-* The pictures come from the site (http://www.afterbefore.pl) 
+* The pictures come from the site (http://www.afterbefore.pl)
