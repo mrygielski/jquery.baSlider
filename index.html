@@ -3,9 +3,9 @@
 	<title>baSlider</title>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="src/jquery.baSlider.css">
+	<link rel="stylesheet" type="text/css" href="dist/jquery.baSlider.css">
 	<script src="js/jquery.min.js"></script>
-	<script src="src/jquery.baSlider.js"></script>
+	<script src="dist/jquery.baSlider.js"></script>
 </head>
 <body>
 
@@ -25,9 +25,25 @@
 			<h2><a id="Demo__Examples_2"></a>Demo &amp; Examples</h2>
 			<p><a href="https://mrygielski.github.io/jquery.baSlider/">https://mrygielski.github.io/jquery.baSlider/</a></p>
 			
-			<div class='baSlider'>
+			<p>Horizontal:</p>
+			<div class='baSlider horizontal'>
 				<div class='frame'>
-					<div baSlider-handler><img src="images/drag.svg" alt=""></div>
+					<div baSlider-handler><img src="images/drag-horizontal.svg" alt=""></div>
+					<div class='before'>
+						<img src='images/torun_brama_zamkowa_1910_before.jpg' baSlider-image>
+					</div>  
+					<div class='after'>
+						<div>
+							<img src='images/torun_brama_zamkowa_1910_after.jpg' baSlider-image>
+						</div>
+					</div>  
+				</div>
+			</div>
+			<br><br>
+			<p>Vertical:</p>
+			<div class='baSlider vertical'>
+				<div class='frame'>
+					<div baSlider-handler><img src="images/drag-vertical.svg" alt=""></div>
 					<div class='before'>
 						<img src='images/torun_brama_zamkowa_1910_before.jpg' baSlider-image>
 					</div>  
@@ -40,7 +56,25 @@
 			</div>
 
 			<script>
-				$('.baSlider').baSlider({
+				$('.horizontal').baSlider({
+					align: "horizontal",
+					start: {
+						horizontal: "50%"
+					},
+					handler: {
+						position: "auto",
+						offsetX: 0,
+						offsetY: 0
+					},
+					animation: 300,
+					height: "auto",
+					imgHeight: "auto"
+				});
+				$('.vertical').baSlider({
+					align: "vertical",
+					start: {
+						vertical: "50%"
+					},
 					handler: {
 						position: "auto",
 						offsetX: 0,
@@ -69,22 +103,27 @@
 </code></pre>
 			<p>Include jQuery:</p>
 			<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></code></pre>
-			<p>Include plugin’s CSS and JS:</p>
+			<p>Include plugin`s CSS and JS:</p>
 			<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"src/jquery.baSlider.csss"</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"src/jquery.baSlider.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
 </code></pre>
 			<p>Call the plugin:</p>
 			<pre><code class="language-javascript">$(<span class="hljs-string">'.baSlider'</span>).baSlider();</code></pre>
 			<h2><a id="Options_45"></a>Options</h2>
-			<p>Here’s a list of available settings.</p>
+			<p>Here`s a list of available settings.</p>
 			<pre><code class="language-javascript">$(<span class="hljs-string">'.baSlider'</span>).baSlider({
+    align: <span class="hljs-string">"horizontal"</span>,
+    start: {
+        horizontal: <span class="hljs-string">"50%"</span>,
+        vertical: <span class="hljs-string">"50%"</span>
+    },
     handler: {
         position: <span class="hljs-string">"auto"</span>,
         offsetX: <span class="hljs-number">0</span>,
         offsetY: <span class="hljs-number">0</span>
     },
-	speed: <span class="hljs-number">300</span>,
-    height:  <span class="hljs-literal">true</span>,
+    speed: <span class="hljs-number">300</span>,
+    height: <span class="hljs-literal">true</span>,
     iconIssues: <span class="hljs-literal">false</span>
 });
 </code></pre>
@@ -98,6 +137,18 @@
 			</tr>
 			</thead>
 			<tbody>
+			<tr>
+			<td><code>align</code></td>
+			<td><em>String</em></td>
+			<td><code>horizontal</code></td>
+			<td>Align of scroll.</td>
+			</tr>
+			<tr>
+			<td><code>start</code></td>
+			<td><em>Array</em></td>
+			<td><code>50%</code></td>
+			<td>Place of dividing the photo horizontally & vertically.</td>
+			</tr>
 			<tr>
 			<td><code>handler</code></td>
 			<td><em>Array</em></td>

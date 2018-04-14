@@ -47,12 +47,17 @@ Here's a list of available settings.
 
 ```javascript
 $('.baSlider').baSlider({
+	align: "horizontal",
+    start: {
+        horizontal: "50%",
+        vertical: "50%"
+    },
 	handler: {
 		position: "auto",
 		offsetX: 0,
 		offsetY: 0
 	},
-	speed: 300,
+    speed: 300,
 	height: auto,
 	imgHeight: auto
 });
@@ -60,6 +65,8 @@ $('.baSlider').baSlider({
 
 Attribute			| Type				| Default		| Description
 ---						| ---					| ---				| ---
+`align`		| *String*		| `horizontal`		| Align of scroll.
+`start`		| *Array*		| `50%`		| Place of dividing the photo horizontally & vertically.
 `handler`		| *Array*		| `auto`		| Displays the number of stars in a repository.
 `speed`		| *Number*		| `auto`		| Speed of animation: value (px).
 `height`		| *String*		| `auto`		| Available options: auto, value (px).

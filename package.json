@@ -33,21 +33,6 @@
   "peerDependencies": {
     "jquery": "*"
   },
-  "devDependencies": {
-    "jquery-1.5.2": "jquery#1.5.2",
-    "jquery-1.6.4": "jquery#1.6.4",
-    "jquery-1.7.2": "jquery#1.7.2",
-    "jquery-1.8.3": "jquery#1.8.3",
-    "jquery-1.9.1": "jquery#1.9.1",
-    "jquery-1.10.2": "jquery#1.10.2",
-    "jquery-1.11.3": "jquery#1.11.3",
-    "jquery-1.12.4": "jquery#1.12.4",
-    "jquery-2.0.3": "jquery#2.0.3",
-    "jquery-2.1.4": "jquery#2.1.4",
-    "jquery-2.2.4": "jquery#2.2.4",
-    "jquery-3.0.0": "jquery#3.0.0",
-    "jquery-3.1.1": "jquery#3.1.1"
-  },
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",

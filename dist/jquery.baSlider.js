@@ -51,6 +51,7 @@
 		afterFrame = this.find('.after').find('div'),
 		drag = { elem: null, x: 0, y: 0, state: false},
 		delta = { x: 0, y: 0},
+		setWidth = opts.width == 'auto' ?  baSliderWidth : "100%",
 		setHeight = opts.height == 'auto' ?  baSliderHeight : opts.height;
 
 		imageDimensions = function($img) {
@@ -75,16 +76,26 @@
 				top: (w_h - new_h) / 2 + 'px'
 			}
 		};
-
+		
 		_baSlider = {
 
+			tmpAfterWidth : 0,
+			tmpAfterHeight : 0,
+
 			init : function() {
-				after.width("50%");
-				after.height(setHeight);
+				if (opts.align == "horizontal") {
+					after.width(opts.start.horizontal);
+					after.height(setHeight);
+				} else {
+					after.width(setWidth);
+					after.height(opts.start.vertical);
+				}
 				frame.width(baSliderWidth);
 				frame.height(setHeight);
 				afterFrame.width(baSliderWidth);
 				afterFrame.height(setHeight);
+				this.tmpAfterWidth = parseInt(after.width());
+				this.tmpAfterHeight = parseInt(after.height());
 			},
 
 			/**
@@ -94,18 +105,33 @@
 			handlerPosition : function(fn) {
 				switch(opts.handler.position) {
 					case "auto":
-						baSliderHandler.css("left", parseInt(frame.width() / 2) - (((baSliderHandler.width() / 2) + opts.handler.offsetX)));
-						baSliderHandler.css("top", (parseInt((frame.height())) / 2) - (((baSliderHandler.height() / 2) + opts.handler.offsetY)));
+						if (opts.align == "horizontal") {
+							baSliderHandler.css("left", parseInt(after.width()) - (((baSliderHandler.width() / 2) + opts.handler.offsetX)));
+							baSliderHandler.css("top", (parseInt(after.height() / 2)) - (((baSliderHandler.height() / 2) + opts.handler.offsetY)));
+						} else {
+							baSliderHandler.css("left", parseInt(after.width() / 2) - (((baSliderHandler.width() / 2) + opts.handler.offsetX)));
+							baSliderHandler.css("top", (parseInt((after.height()))) - (((baSliderHandler.height() / 2) + opts.handler.offsetY)));
+						}
 					break;
 
 					case "top":
-						baSliderHandler.css("left", parseInt(frame.width() / 2) - (((baSliderHandler.width() / 2) + opts.handler.offsetX)));
+						baSliderHandler.css("left", parseInt(after.width()) - (((baSliderHandler.width() / 2) + opts.handler.offsetX)));
 						baSliderHandler.css("top", parseInt(0 + opts.handler.offsetY));
 					break;
 
 					case "bottom":
-						baSliderHandler.css("left", parseInt(frame.width() / 2) - (((baSliderHandler.width() / 2) + opts.handler.offsetX)));
+						baSliderHandler.css("left", parseInt(after.width()) - (((baSliderHandler.width() / 2) + opts.handler.offsetX)));
 						baSliderHandler.css("bottom", parseInt(0 + opts.handler.offsetY));
+					break;
+
+					case "left":
+						baSliderHandler.css("left", parseInt(opts.handler.offsetX));
+						baSliderHandler.css("top", (parseInt((after.height()))) - (((baSliderHandler.height() / 2) + opts.handler.offsetY)));
+					break;
+
+					case "right":
+						baSliderHandler.css("right", parseInt(opts.handler.offsetX));
+						baSliderHandler.css("top", (parseInt((after.height()))) - (((baSliderHandler.height() / 2) + opts.handler.offsetY)));
 					break;
 				}
 			},
@@ -121,13 +147,20 @@
 
 						var cur_offset = $(drag.elem).offset();
 
-						$(drag.elem).offset({
-							left: (cur_offset.left + delta.x)/*,
-							top: (cur_offset.top + delta.y)*/
-						});
-						baSliderHandler.css("left", drag.x - after.offset().left - ((baSliderHandler.width() / 2) + opts.handler.offsetX));
-
-						after.width(drag.x - delta.x - after.offset().left);
+						if (opts.align == "horizontal") {
+							$(drag.elem).offset({
+								left: (cur_offset.left + delta.x)
+							});
+							baSliderHandler.css("left", drag.x - delta.x - after.offset().left - ((baSliderHandler.width() / 2) + opts.handler.offsetX));
+						} else {
+							$(drag.elem).offset({
+								top: (cur_offset.top + delta.y)
+							});
+							baSliderHandler.css("top", drag.y - delta.y - after.offset().top - ((baSliderHandler.height() / 2) + opts.handler.offsetY));
+						}
+						
+						if (opts.align == "horizontal") after.width(drag.x - delta.x - after.offset().left);
+						else after.height(drag.y - delta.y - after.offset().top);
 						drag.x = (e.type == 'mousemove' ? e.pageX : e.originalEvent.touches[0].pageX);
 						drag.y = (e.type == 'mousemove' ? e.pageY : e.originalEvent.touches[0].pageY);
 					}
@@ -135,6 +168,8 @@
 
 				/* Miuser move event handler */
 				$(document).mousemove(function(e) { moveElement(e); });
+
+				var _this = this;
 
 				baSliderHandler.on("mouseup mousedown touchstart touchmove touchend", function(e) {
 
@@ -144,10 +179,17 @@
 							drag.elem.style.opacity = '1';
 							drag.state = false;
 
-							baSliderHandler.animate({
-								"left": parseInt(baSliderWidth / 2) - ((baSliderHandler.width() / 2) + opts.handler.offsetX)
-							}, opts.speed);
-							after.animate({"width": parseInt(baSliderWidth / 2)}, opts.speed);
+							if (opts.align == "horizontal") {
+								baSliderHandler.animate({
+									"left": parseInt(_this.tmpAfterWidth) - ((baSliderHandler.width() / 2) + opts.handler.offsetX)
+								}, opts.speed);
+								after.animate({"width": parseInt(_this.tmpAfterWidth)}, opts.speed);
+							} else {
+								baSliderHandler.animate({
+									"top": parseInt(_this.tmpAfterHeight) - ((baSliderHandler.height() / 2) + opts.handler.offsetY)
+								}, opts.speed);								
+								after.animate({"height": parseInt(_this.tmpAfterHeight)}, opts.speed);
+							}
 						}
 					}
 
@@ -192,6 +234,19 @@
 	};
 
 	$.fn.baSlider.defaults = {
+		/**
+		* align of scroll
+		*/
+		align: "horizontal",
+		
+		/**
+		* place of dividing the photo horizontally & vertically
+		*/
+		start: {
+			horizontal: "50%",
+			vertical: "50%"
+		},
+		
 		/**
 		* handler position settings
 		*/
