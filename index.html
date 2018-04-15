@@ -25,8 +25,8 @@
             <h2><a id="Demo__Examples_2"></a>Demo &amp; Examples</h2>
             <p><a href="https://mrygielski.github.io/jquery.baSlider/">https://mrygielski.github.io/jquery.baSlider/</a></p>
             
-            <p>Horizontal:</p>
-            <div class='baSlider horizontal'>
+            <p>Custom start position:</p>
+            <div class='baSlider horizontal demo1'>
                 <div class='frame'>
                     <div baSlider-handler><img src="images/drag-horizontal.svg" alt=""></div>
                     <div class='before'>
@@ -40,8 +40,38 @@
                 </div>
             </div>
             <br><br>
+            <p>Horizontal:</p>
+            <div class='baSlider horizontal demo2'>
+                <div class='frame'>
+                    <div baSlider-handler><img src="images/drag-vertical.svg" alt=""></div>
+                    <div class='before'>
+                        <img src='images/torun_brama_zamkowa_1910_before.jpg' baSlider-image>
+                    </div>  
+                    <div class='after'>
+                        <div>
+                            <img src='images/torun_brama_zamkowa_1910_after.jpg' baSlider-image>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <br><br>
             <p>Vertical:</p>
-            <div class='baSlider vertical'>
+            <div class='baSlider vertical demo3'>
+                <div class='frame'>
+                    <div baSlider-handler><img src="images/drag-vertical.svg" alt=""></div>
+                    <div class='before'>
+                        <img src='images/torun_brama_zamkowa_1910_before.jpg' baSlider-image>
+                    </div>  
+                    <div class='after'>
+                        <div>
+                            <img src='images/torun_brama_zamkowa_1910_after.jpg' baSlider-image>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+            <br><br>
+            <p>No reverse:</p>
+            <div class='baSlider vertical demo4'>
                 <div class='frame'>
                     <div baSlider-handler><img src="images/drag-vertical.svg" alt=""></div>
                     <div class='before'>
@@ -56,7 +86,22 @@
             </div>
 
             <script>
-                $('.horizontal').baSlider({
+			
+                $('.demo1').baSlider({
+                    align: "horizontal",
+                    start: {
+                        horizontal: "20%"
+                    },
+                    handler: {
+                        position: "auto",
+                        offsetX: 0,
+                        offsetY: 0
+                    },
+                    height: "auto",
+                    imgHeight: "auto"
+                });
+				
+                $('.demo2').baSlider({
                     align: "horizontal",
                     start: {
                         horizontal: "50%"
@@ -66,11 +111,11 @@
                         offsetX: 0,
                         offsetY: 0
                     },
-                    animation: 300,
                     height: "auto",
                     imgHeight: "auto"
                 });
-                $('.vertical').baSlider({
+				
+                $('.demo3').baSlider({
                     align: "vertical",
                     start: {
                         vertical: "50%"
@@ -80,10 +125,28 @@
                         offsetX: 0,
                         offsetY: 0
                     },
-                    animation: 300,
                     height: "auto",
                     imgHeight: "auto"
                 });
+				
+                $('.demo4').baSlider({
+                    align: "vertical",
+                    start: {
+                        vertical: "50%"
+                    },
+                    handler: {
+                        position: "auto",
+                        offsetX: 0,
+                        offsetY: 0
+                    },
+                    anim: { 
+					    play: false 
+					},
+					reverse: false,
+                    height: "auto",
+                    imgHeight: "auto"
+                });
+				
             </script>
             
             <h2><a id="Usage_6"></a>Usage</h2>
@@ -130,6 +193,7 @@
         offsetX: <span class="hljs-number">0</span>,
         offsetY: <span class="hljs-number">0</span>
     },
+    reverse: <span class="hljs-number">true</span>,
     speed: <span class="hljs-number">300</span>,
     height: <span class="hljs-literal">true</span>,
     iconIssues: <span class="hljs-literal">false</span>
@@ -169,6 +233,13 @@
             <td><code>-</code></td>
             <td>Displays the number of stars in a repository.</td>
             </tr>
+            <tr>
+            <td><code>reverse</code></td>
+            <td><em>Boolean</em></td>
+            <td><code>true</code></td>
+            <td>Return to the starting place.</td>
+            </tr>
+            <tr>
             <tr>
             <td><code>speed</code></td>
             <td><em>Number</em></td>

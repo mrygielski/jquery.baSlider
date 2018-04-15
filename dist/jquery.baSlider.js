@@ -81,6 +81,7 @@
 
             tmpAfterWidth : 0,
             tmpAfterHeight : 0,
+            rel : "",
 
             init : function() {
                 if (opts.align == "horizontal") {
@@ -144,7 +145,7 @@
 
 					if (!drag.state) {
 
-						setTimeout(function () {
+						this.rel = setTimeout(function () {
 
 							if (opts.align == "horizontal") {
 
@@ -223,19 +224,23 @@
                             drag.elem.style.opacity = '1';
                             drag.state = false;
 
-                            if (opts.align == "horizontal") {
-                                baSliderHandler.animate({
-                                    "left": parseInt(_this.tmpAfterWidth) - ((baSliderHandler.width() / 2) + opts.handler.offsetX)
-                                }, opts.speed);
-                                after.animate({"width": parseInt(_this.tmpAfterWidth)}, opts.speed);
-                            } else {
-                                baSliderHandler.animate({
-                                    "top": parseInt(_this.tmpAfterHeight) - ((baSliderHandler.height() / 2) + opts.handler.offsetY)
-                                }, opts.speed);                                
-                                after.animate({"height": parseInt(_this.tmpAfterHeight)}, opts.speed);
-                            }
+                            if (opts.reverse) {
+									
+								if (opts.align == "horizontal") {
+									baSliderHandler.animate({
+										"left": parseInt(_this.tmpAfterWidth) - ((baSliderHandler.width() / 2) + opts.handler.offsetX)
+									}, opts.speed);
+									after.animate({"width": parseInt(_this.tmpAfterWidth)}, opts.speed);
+								} else {
+									baSliderHandler.animate({
+										"top": parseInt(_this.tmpAfterHeight) - ((baSliderHandler.height() / 2) + opts.handler.offsetY)
+									}, opts.speed);                                
+									after.animate({"height": parseInt(_this.tmpAfterHeight)}, opts.speed);
+								}
 
-                            setTimeout(function() { _this.bounce() }, opts.animation.delay);
+							}
+							
+                            _this.bounce();
                         }
                     }
 
@@ -245,6 +250,7 @@
                             drag.elem = this;
                             after.clearQueue().stop();
                             baSliderHandler.clearQueue().stop();
+							clearTimeout(this.rel);
                             this.style.opacity = '0.5';
                             drag.x = (e.type == 'mousedown' ? e.pageX : e.originalEvent.touches[0].pageX);
                             drag.y = (e.type == 'mousedown' ? e.pageY : e.originalEvent.touches[0].pageY);
@@ -301,10 +307,10 @@
 	    */
         anim: {
 			play: true,
-            startDelay: 4000,
-            delay: 2000,
-            speed: 300,
-            distance: 55,
+            startDelay: 5000,
+            delay: 10000,
+            speed: 500,
+            distance: 15,
             times: 2
         },
         
@@ -316,6 +322,11 @@
             offsetX: 0,
             offsetY: 0
         },
+
+        /**
+        * return to the starting place
+        */
+        reverse: true,
 
         /**
         * speed of animation return

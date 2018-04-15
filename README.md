@@ -77,6 +77,7 @@ Attribute            | Type                | Default        | Description
 `start`| *Array* | - | Place of dividing the photo horizontally & vertically.
 `anim`| *Array* | - | Animation configuration.
 `handler`| *Array* | -` | Displays the number of stars in a repository.
+`reverse`| *Boolean* | `true` | Return to the starting place.
 `speed`| *Number* | `auto` | Speed of animation: value (px).
 `height`| *String* | `auto` | Available options: auto, value (px).
 `imgHeight`| *String* | `auto` | Available options: auto, frame, value (px).
